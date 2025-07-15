@@ -5,14 +5,14 @@ from itertools import product
 # Load CSVs based on illumination type
 @st.cache_data
 def load_data():
-    led_light_unit = pd.read_csv("IlluminatedPushbuttonLEDLightUnit 4.csv")
-    led_lens_color = pd.read_csv("IlluminatedPushbuttonLEDLensColor 4.csv")
-    led_voltage = pd.read_csv("IlluminatedPushbuttonLEDVoltage 5.csv")
+    led_light_unit = pd.read_csv("IlluminatedPushbuttonLEDLightUnit.csv")
+    led_lens_color = pd.read_csv("IlluminatedPushbuttonLEDLensColor.csv")
+    led_voltage = pd.read_csv("IlluminatedPushbuttonLEDVoltage.csv")
 
-    inc_light_unit = pd.read_csv("IlluminatedPushbuttonIncandescentLightUnit 2.csv", skiprows=1, usecols=[0, 1], names=["Label", "Code"])
-    inc_lens_color = pd.read_csv("illuminatedPushbuttonIncandescentLensColor 2.csv", skiprows=1, usecols=[0, 1], names=["Label", "Code"])
+    inc_light_unit = pd.read_csv("IlluminatedPushbuttonIncandescentLightUnit.csv", skiprows=1, usecols=[0, 1], names=["Label", "Code"])
+    inc_lens_color = pd.read_csv("illuminatedPushbuttonIncandescentLensColor.csv", skiprows=1, usecols=[0, 1], names=["Label", "Code"])
 
-    circuit = pd.read_csv("NonIlluminatedPushbuttonCircuit 4.csv", skiprows=1, usecols=[0, 1], names=["Label", "Code"])
+    circuit = pd.read_csv("NonIlluminatedPushbuttonCircuit.csv", skiprows=1, usecols=[0, 1], names=["Label", "Code"])
 
     return led_light_unit, led_lens_color, led_voltage, inc_light_unit, inc_lens_color, circuit
 
