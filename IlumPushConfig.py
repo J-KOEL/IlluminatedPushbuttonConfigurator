@@ -32,7 +32,7 @@ if illumination_type == "LED":
 
     light_unit_code = led_light_unit[led_light_unit["Label"] == light_unit_choice]["Code"].values[0]
     lens_color_code = led_lens_color[led_lens_color["Label"] == lens_color_choice]["Code"].values[0]
-    voltage_code = led_voltage[led_voltage["Label"] == voltage_choice]["Code"].values[0]
+    voltage_code = led_voltage[led_voltage["Label"] == voltage_choice]["Code"].values[0].zfill(2)
     circuit_code = circuit_df[circuit_df["Label"] == circuit_choice]["Code"].values[0]
 
     catalog_number = f"10250T{light_unit_code}{lens_color_code}{voltage_code}-{circuit_code}"
